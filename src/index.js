@@ -1,12 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const App = () => {
+import style from './reset.css'
+import App from './Components/App'
+
+const Index = () => {
   return (
-    <div>
-      <h1>Hello Waifus</h1>
+    <div className={style.reset}>
+      <App />
     </div>
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<Index />, document.getElementById('root'))
