@@ -5,4 +5,7 @@ Using Webpack 4, webpack-dev-server, react v16, babel,  babel-presets-[react,env
 ## Setup
 npm install  
 npm run start [start webpack dev server]  
-npm run build [creates a dist folder with mini files]
+npm run build [creates a dist folder with mini files]  
+
+### Server
+localhost: 8080, should open it by itself
