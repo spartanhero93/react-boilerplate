@@ -1,6 +1,7 @@
 # React-Boilerplate
-This is my react-boilerplate, yea.
+This is my custom react-boilerplate.
+
+Using Webpack 4, react v16, babel
 ## Setup
 npm install
-npm run build
-npm start
+npm run start

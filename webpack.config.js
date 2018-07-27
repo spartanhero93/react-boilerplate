@@ -1,35 +1,21 @@
-let path = require("path");
-let nodeExternals = require("webpack-node-externals");
-const moduleObj = {
-  loaders: [
-    {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loaders: ["babel-loader"]
-    }
-  ]
-};
-const client = {
-  entry: {
-    client: "./src/client/index.js"
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+
+const htmlPlugin = new HtmlWebPackPlugin({
+  template: './src/index.html',
+  filename: './index.html'
+})
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      }
+    ]
   },
-  target: "web",
-  output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "dist")
-  },
-  module: moduleObj
-};
-const server = {
-  entry: {
-    server: "./src/server/index.js"
-  },
-  target: "node",
-  output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "dist")
-  },
-  module: moduleObj,
-  externals: [nodeExternals()]
-};
-module.exports = [client, server];
+  plugins: [htmlPlugin]
+}
