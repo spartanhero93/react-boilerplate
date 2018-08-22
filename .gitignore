@@ -1,6 +1,4 @@
-# Node
-node_modules/
-# Webstorm
-.idea/
-# Project
-dist/
+.vscode
+node_modules
+dist
+*.log
